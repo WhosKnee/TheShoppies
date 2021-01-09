@@ -1,0 +1,3 @@
+export const ADD_NOMINATION = "ADD_NOMINATION";
+export const REMOVE_NOMINATION = "REMOVE_NOMINATION";
+export const REMOVE_ALL = "REMOVE_ALL";

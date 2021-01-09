@@ -1,38 +1,279 @@
-.App {
-  text-align: center;
+body {
+    font-family:"Montserrat";
+    font-weight: 550;
+    background-color: rgb(245, 245, 245);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y:scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#container {
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+    color: #333333;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1%;
+    padding-bottom: 0.5%;;
+    border-bottom: 3px solid rgba(83, 83, 83, 0.8);
+    animation: fadeIn ease-in 0.5s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.subTitle {
+    font-size: 0.4em;
 }
 
-.App-link {
-  color: #61dafb;
+#searchForm {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    animation: fadeIn ease-in 1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#searchField {
+    background-color: white;
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.35);
 }
+
+#searchField:focus {
+    background-color: white;
+}
+
+.inputIcons {
+    width:100%;
+}
+
+.inputIcons i {
+    position: absolute;
+    padding: 10px; 
+    min-width: 40px;
+    margin-left: 10%;
+}
+
+
+
+.movieFoundCard, .movieNominatedCard {
+    border-top: .4px solid rgb(175, 173, 173);
+    padding: 10px;
+    animation: fadeIn ease-in 0.2s;
+}
+
+.movieFoundCard:hover {
+    background-color: rgb(248, 255, 247);
+}
+
+.movieNominatedCard:hover {
+    background-color: rgb(253, 247, 247);
+}
+
+button {
+    margin-top: 1%;
+    padding:0.3em 1.2em;
+    border-radius: 10px;
+    border: none;
+    font-weight:400;
+    text-align:center;
+    transition: all 0.4s;
+}
+
+button:focus {
+    outline: none;
+}
+
+.movieFoundCardButton {
+    background-color: rgb(180, 253, 158);
+}
+
+.movieFoundCardButton:hover {
+    background-color: rgb(76, 194, 41);
+    color: white;
+}
+
+.movieFoundCardButton:focus {
+    animation: none;
+}
+
+.movieFoundCardNominated {
+    background-color: rgb(211, 255, 199);
+}
+
+.movieFoundCardNominated:focus{
+    animation: shake 0.3s;
+}
+
+
+.movieNominatedCardButton {
+    background-color: rgb(250, 184, 184);
+}
+
+.movieNominatedCardButton:hover {
+    background-color: rgb(226, 109, 109);
+    color: white;
+}
+
+#removeAllBtn {
+    margin-top: 0%;
+    float: right;
+    font-size: 0.8em;
+    background-color: rgb(166, 206, 241);
+    transition: 0.2s all;
+}
+
+#removeAllBtn:disabled {
+    color: rgb(129, 129, 129);
+    background-color: rgb(232, 244, 255);
+}
+
+#removeAllBtn:hover:enabled {
+    background-color: rgb(79, 156, 224);
+    color: white;
+}
+
+.nominatedMoviesList, .searchedMoviesList {
+    width: 45%;
+    border-radius: 5px;
+    background-color:rgb(255, 255, 255);
+    border: 1px solid #dbdbdb;
+    float: left;
+    display: inline-table;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.25);
+}
+
+.nominatedMoviesList {
+    margin-left: 5%;
+    animation: fadeIn ease-in 1s;
+}
+
+.searchedMoviesList {
+    margin-right: 5%;
+    margin-bottom: 1%;
+    animation: fadeIn ease-in 0.4s;
+} 
+
+.subheader {
+    font-size: 1.5em;
+    margin: 2%;
+
+}
+
+#banner {
+    background-color: rgb(255, 255, 255);
+    padding: 1%;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    text-align: center;
+    font-size: 1.4em;
+    display: flex;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgba(196, 196, 196, 0.5);
+    animation: fadeIn ease-in 1.2s;
+}
+
+@media (max-width: 1060px) {
+    .nominatedMoviesList, .searchedMoviesList {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    #container {
+        display: block;
+    }
+
+    .searchedMoviesList {
+        margin-bottom: 3%;;
+    }
+
+    .nominatedMoviesList{
+        margin-bottom: 2%;;
+    }
+
+    #searchForm {
+        height: 70px;
+        margin-top: 6%;
+    }
+
+    #searchField {
+        width: 100%;
+    }
+
+    #banner {
+        width: 90%;
+    }
+
+    .inputIcons i {
+        margin-left: 1%;
+    }
+
+    .subheader {
+        font-size: 1.2em;
+    }
+
+}
+
+@keyframes fadeIn {
+    from { opacity:0; } to { opacity:1; }
+}
+
+
+@keyframes shake { 
+    0% { 
+        transform: translateX(0px) rotate(0deg); 
+    } 
+
+    10% { 
+        transform: translateX(-4px);
+    } 
+
+    20% { 
+        transform: translateX(-2px);
+    } 
+
+    30% { 
+        transform: translateX(4px);
+    } 
+
+    40% { 
+        transform: translateX(2px);
+    } 
+
+    50% { 
+        transform: translateX(0px) rotate(0deg); 
+    } 
+
+    60% { 
+        transform: translateX(-4px);
+    } 
+
+    70% { 
+        transform: translateX(-2px);
+    } 
+
+    80% { 
+        transform: translateX(4px);
+    } 
+
+    90% { 
+        transform: translateX(2px);
+    } 
+
+    100% { 
+        transform: translateX(0px) rotate(0deg); 
+    } 
+} 
