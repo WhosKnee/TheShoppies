@@ -1,6 +1,9 @@
 # Shoppies 2021 Nominations! 
 ## By Husni Fareed
 
+## Live App:
+https://shoppies2021.herokuapp.com/
+
 ## Design Choices:
 - I wanted to focus on making this app accessible and clear, so I went with a simple grey-white template and used green for buttons nominating a movie and red to indicated removing a nomination.
 - The app is responsive so that if you resize the page, it adjusts accordingly.
