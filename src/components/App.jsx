@@ -4,10 +4,8 @@ import Search from './Search.jsx';
 import Nominated from "./Nominated.jsx";
 import Banner from "./Banner.jsx";
 
-import { connect } from 'react-redux'; 
-import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { addNomination, removeNomination, removeAll } from '../actions'; // importing the aciton methods
-import moment from 'moment';
 
 class App extends Component {
     constructor(props){
@@ -29,7 +27,7 @@ class App extends Component {
         let moviesNominated = this.props.moviesNominated;
         // make request to collect movies
         let acceptedTitle = this.state.searchText.replace(/\s+/g, '+');
-        let FETCH_URL = `http://www.omdbapi.com/?apikey=655069e8&type=movie&s=${acceptedTitle}`;
+        let FETCH_URL = `https://www.omdbapi.com/?apikey=655069e8&type=movie&s=${acceptedTitle}`;
 
         fetch(FETCH_URL)
         .then((response) => {

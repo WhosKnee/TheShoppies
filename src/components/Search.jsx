@@ -3,10 +3,6 @@ import '../App.css';
 
 class Search extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render(){
         let moviesFound = this.props.moviesFound != null ?  this.props.moviesFound : [];
         let searchText = this.props.searchText != null ? this.props.searchText : '';
@@ -32,7 +28,7 @@ class Search extends Component {
                                     </div>
                                 </div>
                                 {
-                                    movie.Nominated == false ?
+                                    movie.Nominated === false ?
 
                                         <button
                                         className="movieFoundCardButton"

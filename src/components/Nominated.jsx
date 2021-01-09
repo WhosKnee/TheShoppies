@@ -5,7 +5,7 @@ class Nominated extends Component {
     render(){
         let moviesNominated = this.props.moviesNominated;
         let margin = "0 0 5% 0"
-        if(this.props.curSeachDisplay == "none"){
+        if(this.props.curSeachDisplay === "none"){
             margin = "0 auto";
         }
         return (
